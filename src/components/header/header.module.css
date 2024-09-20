@@ -1,0 +1,22 @@
+.topDiv {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  gap: 30px;
+}
+
+.divIcon {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.light {
+  background-color: black;
+}
+
+.dark {
+  background-color: white;
+}

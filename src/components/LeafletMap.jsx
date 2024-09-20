@@ -480,24 +480,29 @@ const LeafletMap = () => {
 
     fetchLocation();
 
-    const interval = setInterval(fetchLocation, 6000);
+    const interval = setInterval(fetchLocation, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
+    // UNCOMMENT INI JIKA INGIN MELIHAT DATA YANG BERUBAH DENGAN DATA DUMMY
     let arrayInfo = data?.features;
     let arrayPrevInfo = prevData?.features;
 
+    // INI MURUPAKAN DATA ASLI YANG DIAMBIL DARI API
+    // let arrayInfo = info?.features;
+    // let arrayPrevInfo = previousInfo?.features;
+
     const result = arrayInfo?.filter((item, index) => {
       return (
-        item.properties.debit != arrayPrevInfo[index].properties.debit ||
+        item.properties.debit != arrayPrevInfo[index]?.properties.debit ||
         item.properties.water_level !=
-          arrayPrevInfo[index].properties.water_level
+          arrayPrevInfo[index]?.properties.water_level
       );
     });
 
-    if (result.length > 0) {
+    if (result != undefined) {
       setChangedData(result);
       result.map((item) => {
         toast("Data " + item.properties.name + " berubah", {
@@ -525,7 +530,11 @@ const LeafletMap = () => {
         />
 
         {info?.features?.map((feature) => (
-          <CircleLocation feature={feature} key={feature.properties.id} changedData={changedData} />
+          <CircleLocation
+            feature={feature}
+            key={feature.properties.id}
+            changedData={changedData}
+          />
         ))}
       </MapContainer>
     </>
