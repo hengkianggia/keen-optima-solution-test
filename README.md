@@ -4,7 +4,7 @@ Ini adalah project untuk membuat website monitoring data pintu air dengan implem
 
 - Download atau clone repository ini.
 - Masuk kedalam directory project ini.
-- Install dependencies dengan perintah dibawah ini : 
+- Buka terminal dan install dependencies dengan perintah dibawah ini : 
 
 ```bash
 npm install
