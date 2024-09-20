@@ -487,12 +487,12 @@ const LeafletMap = () => {
 
   useEffect(() => {
     // UNCOMMENT INI JIKA INGIN MELIHAT DATA YANG BERUBAH DENGAN DATA DUMMY
-    let arrayInfo = data?.features;
-    let arrayPrevInfo = prevData?.features;
+    // let arrayInfo = data?.features;
+    // let arrayPrevInfo = prevData?.features;
 
     // INI MURUPAKAN DATA ASLI YANG DIAMBIL DARI API
-    // let arrayInfo = info?.features;
-    // let arrayPrevInfo = previousInfo?.features;
+    let arrayInfo = info?.features;
+    let arrayPrevInfo = previousInfo?.features;
 
     const result = arrayInfo?.filter((item, index) => {
       return (
